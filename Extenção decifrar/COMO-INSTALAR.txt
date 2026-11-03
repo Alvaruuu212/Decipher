@@ -1,0 +1,21 @@
+COMO CARREGAR NO CHROME
+=======================
+
+1. Extraia o ZIP, se ainda estiver compactado.
+2. Abra a pasta ate VER estes arquivos soltos:
+   - manifest.json
+   - background.js
+   - content.js
+   - popup.html
+3. No Chrome, abra: chrome://extensions
+4. Ative "Modo do desenvolvedor" (canto superior direito).
+5. Clique em "Carregar sem compactacao".
+6. Selecione ESTA pasta (a que contem o manifest.json visivel).
+
+NAO selecione:
+- o arquivo .zip
+- a pasta pai (Downloads ou workspace) se o manifest.json nao estiver visivel nela
+- uma subpasta vazia
+
+Se o Chrome disser que o manifesto esta faltando, voce selecionou a pasta errada.
+Entre na pasta "carregar-esta-pasta" e escolha ela.

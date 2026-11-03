@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "Pesquisador Rápido",
+  "version": "1.0.0",
+  "description": "Painel flutuante para pesquisar, traduzir e decodificar texto ou imagens selecionados, sem sair da página.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "langs.js",
+        "codes.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "Pesquisador Rápido",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon48.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "toggle": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Ligar ou desligar o Pesquisador Rápido"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lens.html",
+        "lens.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
